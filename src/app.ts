@@ -1,7 +1,11 @@
 import express, { Application } from "express";
 import cors from "cors"
 import cookieParser from "cookie-parser";
+
+import globalHandler from "./middleware/globalErrorHandler";
 import { authRouter } from "./models/auth/auth.router";
+import { technicianRouter } from "./models/technician/technician.route";
+
 
 
 const app : Application = express();
@@ -21,11 +25,16 @@ app.use(cookieParser())
 app.get("/",(req, res) => {
     res.json({
         message: "FixItNow",
-        author: "Jabir Siddique"
+        author: "Jabir Siddique Talim"
     })
 })
 
 app.use("/api/auth", authRouter)
+app.use("/api/technician", technicianRouter)
+
+
+
+app.use(globalHandler)
 
 
 export default app

@@ -8,7 +8,6 @@ import { JwtPayload } from "jsonwebtoken";
 import httpStatus from "http-status";
 import { prisma } from "../lib/prisma";
 
-
 const auth =  (...requiredRoles : Role[]) => {
     return easycontroller(async (req: Request, res: Response, next: NextFunction) => {
 
@@ -28,7 +27,7 @@ const auth =  (...requiredRoles : Role[]) => {
         const {id, name, email, role, status} = verifyToken.data as JwtPayload;
 
         if (!requiredRoles.includes(role)) {
-            throw new AppError(httpStatus.FORBIDDEN, "Forbidden");
+            throw new AppError(httpStatus.FORBIDDEN, "Forbidden access");
         }
 
         const user = await prisma.user.findUnique({
