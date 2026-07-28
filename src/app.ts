@@ -1,14 +1,13 @@
-import express from "express";
-import cors from "cors";
+import express, { Application } from "express";
 
-const app = express();
+const app : Application = express();
 
-app.use(cors());
+app.get("/",(req, res) => {
+    res.json({
+        message: "FitItNow",
+        author: "Jabir Siddique Talim"
+    })
+})
 
-app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("FixItNow API is running");
-});
-
-export default app;
+export default app
