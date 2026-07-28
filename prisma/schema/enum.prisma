@@ -3,7 +3,6 @@ enum Role {
     TECHNICIAN
     ADMIN
 }
-
 enum UserStatus {
     ACTIVE
     BANNED
