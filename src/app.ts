@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import globalHandler from "./middleware/globalErrorHandler";
 import { authRouter } from "./models/auth/auth.router";
 import { technicianRouter } from "./models/technician/technician.route";
+import { adminRouter } from "./models/admin/admin.route";
 
 
 
@@ -31,7 +32,7 @@ app.get("/",(req, res) => {
 
 app.use("/api/auth", authRouter)
 app.use("/api/technician", technicianRouter)
-
+app.use("/api/admin", adminRouter)
 
 
 app.use(globalHandler)
