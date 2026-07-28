@@ -1,6 +1,7 @@
 import express, { Application } from "express";
 import cors from "cors"
 import cookieParser from "cookie-parser";
+import { authRouter } from "./models/auth/auth.router";
 
 
 const app : Application = express();
@@ -23,6 +24,8 @@ app.get("/",(req, res) => {
         author: "Jabir Siddique"
     })
 })
+
+app.use("/api/auth", authRouter)
 
 
 export default app
