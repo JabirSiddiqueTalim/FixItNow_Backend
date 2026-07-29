@@ -8,6 +8,7 @@ import { JwtPayload } from "jsonwebtoken";
 import httpStatus from "http-status";
 import { prisma } from "../lib/prisma";
 
+
 const auth =  (...requiredRoles : Role[]) => {
     return easycontroller(async (req: Request, res: Response, next: NextFunction) => {
 

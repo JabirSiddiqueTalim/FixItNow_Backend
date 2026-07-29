@@ -1,7 +1,7 @@
 import { prisma } from "../../lib/prisma";
 import { AppError } from "../../utils/AppError";
-import httpStatus from "http-status";
 import { IupdateTechnicianProfile } from "./technician.interface";
+import httpStatus from "http-status";
 
 const updateTEchnicianProfileINDB = async (userId: string, payload: IupdateTechnicianProfile) => {
     const {name, phone, address, avatarUrl, skills, hourlyRate, bio, experienceYrs, location} = payload
