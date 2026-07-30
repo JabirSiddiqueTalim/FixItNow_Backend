@@ -1,11 +1,11 @@
 import { prisma } from "../../lib/prisma";
 import { AppError } from "../../utils/AppError";
-import { ICreateUser, ILoginUser } from "./auth.interface";
 import bcrypt from "bcryptjs";
 import httpStatus from "http-status";
 import config from "../../config";
 import { jwtUtils } from "../../utils/jwtutils";
 import { SignOptions } from "jsonwebtoken";
+import { ICreateUser } from "./auth.interface";
 
 const allowedRoles = ["CUSTOMER", "TECHNICIAN"];
 
@@ -73,7 +73,7 @@ const createUserIntoDB = async (payload: ICreateUser) => {
   return result;
 };
 
-const loginUser = async (payload: ILoginUser) => {
+const loginUser = async (payload: ILogin) => {
   const { email, password } = payload;
 
   const user = await prisma.user.findUnique({
