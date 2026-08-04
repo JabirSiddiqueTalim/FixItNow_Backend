@@ -1,11 +1,11 @@
 import { prisma } from "../../lib/prisma";
 import { AppError } from "../../utils/AppError";
+import { ICreateUser, ILogin } from "../../schema/index";
 import bcrypt from "bcryptjs";
 import httpStatus from "http-status";
 import config from "../../config";
 import { jwtUtils } from "../../utils/jwtutils";
 import { SignOptions } from "jsonwebtoken";
-import { ICreateUser } from "./auth.interface";
 
 const allowedRoles = ["CUSTOMER", "TECHNICIAN"];
 

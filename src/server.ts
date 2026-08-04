@@ -10,7 +10,7 @@ const main = async () => {
         console.log(`Server is running on port ${config.port}`)
     })
     } catch (error: any) {
-        console.log("Error Starting in the serevr" , error);
+        console.log("Error Starting in the server" , error);
         await prisma.$disconnect();
         process.exit(1);
     }

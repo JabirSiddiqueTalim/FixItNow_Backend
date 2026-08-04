@@ -133,14 +133,15 @@ const getAllServicesFromDB = async (query: IGetAllServiceFilters) => {
         AND: andConditions,
       },
       include: {
-        category: true,
+        category: {
+          select: {
+            name: true,
+            description: true,
+            iconUrl: true,
+          }
+        },
         technician: {
           select: {
-            id: true,
-            bio: true,
-            location: true,
-            avgRating: true,
-            totalReviews: true,
             user: {
               select: {
                 name: true,
@@ -148,8 +149,35 @@ const getAllServicesFromDB = async (query: IGetAllServiceFilters) => {
                 email: true,
               },
             },
+            bio: true,
+            location: true,
+            avgRating: true,
+            totalReviews: true,
           },
         },
+        bookings: {
+          select: {
+            status: true,
+            address: true,
+            priceAtBooking: true,
+            payment: {
+              select: {
+                status: true,
+              }
+            },
+            review: {
+              select: {
+                rating: true,
+                comment: true
+              }
+            }
+          }
+        },
+        _count: {
+          select: {
+            bookings: true,
+          }
+        }
       },
       take: limitInAPage,
       skip,

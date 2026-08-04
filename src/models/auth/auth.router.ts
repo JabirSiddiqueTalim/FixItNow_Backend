@@ -3,7 +3,7 @@ import { authController } from "./auth.controller";
 import auth from "../../middleware/auth";
 import { Role } from "../../../generated/prisma/enums";
 import { validateRequest } from "../../middleware/validateRequest";
-
+import { loginSchema, registerSchema } from "../../schema";
 
 const router = Router();
 

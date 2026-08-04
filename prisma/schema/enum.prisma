@@ -1,41 +1,41 @@
 enum Role {
-  CUSTOMER
-  TECHNICIAN
-  ADMIN
+    CUSTOMER
+    TECHNICIAN
+    ADMIN
 }
 
 enum UserStatus {
-  ACTIVE
-  BANNED
+    ACTIVE
+    BANNED
 }
 
 enum BookingStatus {
-  REQUESTED
-  ACCEPTED
-  DECLINED
-  PAID
-  IN_PROGRESS
-  COMPLETED
-  CANCELLED
+    REQUESTED
+    ACCEPTED
+    DECLINED
+    PAID
+    IN_PROGRESS
+    COMPLETED
+    CANCELLED
 }
 
 enum PaymentProvider {
-  STRIPE
+    STRIPE
 }
 
 enum PaymentStatus {
-  PENDING
-  COMPLETED
-  FAILED
-  REFUNDED
+    PENDING
+    COMPLETED
+    FAILED
+    REFUNDED
 }
 
 enum DayOfWeek {
-  MONDAY
-  TUESDAY
-  WEDNESDAY
-  THURSDAY
-  FRIDAY
-  SATURDAY
-  SUNDAY
+    MONDAY
+    TUESDAY
+    WEDNESDAY
+    THURSDAY
+    FRIDAY
+    SATURDAY
+    SUNDAY
 }
