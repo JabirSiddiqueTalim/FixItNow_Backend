@@ -1,9 +1,4 @@
-import Stripe from "stripe";
+import Stripe from "stripe"
+import config from "../config";
 
-const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
-
-if (!stripeSecretKey) {
-  throw new Error("STRIPE_SECRET_KEY is missing in .env");
-}
-
-export const stripe = new Stripe(stripeSecretKey);
+export const stripe = new Stripe(config.stripe_secret_key)
