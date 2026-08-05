@@ -8,7 +8,7 @@ model TechnicianProfile {
     location      String?
     avgRating     Float    @default(0)
     totalReviews  Int      @default(0)
-    isVerified    Boolean  @default(false)
+    isVerified    Boolean  @default(true)
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
